@@ -100,7 +100,7 @@ class Fusion_Widget_Facebook_Page extends WP_Widget {
 					var $container_width = jQuery( '.<?php echo esc_attr( $args['widget_id'] ); ?>' ).width();
 
 					if ( 1 > $container_width ) {
-						$container_width = <?php echo esc_attr( $widget_width );?>;
+						$container_width = '<?php echo esc_attr( $widget_width );?>';
 					}
 
 					if ( $container_width != jQuery('.<?php echo esc_attr( $args['widget_id'] ); ?> .fb-page' ).data( 'width' ) ) {
