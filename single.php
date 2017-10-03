@@ -143,6 +143,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<?php comments_template(); ?>
 				<?php endif; ?>
 			<?php endif; ?>
+			<div class="comment-section">
+				<div class="fusion-title fusion-title-size-three sep-single" style="margin-top:10px;margin-bottom:10px;">
+					<h3 class="title-heading-left" data-fontsize="20" data-lineheight="30">
+						Join the Conversation				
+					</h3>
+					<div class="title-sep-container">
+						<div class="title-sep sep-single"></div>
+					</div>
+				</div>
+				<div class="fb-comments" data-href="<?php echo get_the_permalink(); ?>" data-width="100%" data-numposts="5"></div>
+			</div>
 		</article>
 	<?php endwhile; ?>
 	<?php wp_reset_postdata(); ?>
