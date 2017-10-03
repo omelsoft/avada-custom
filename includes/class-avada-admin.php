@@ -509,7 +509,7 @@ class Avada_Admin {
 			$welcome_screen = $avada_menu_page_creation_method( 'Avada', 'Avada', 'edit_theme_options', 'avada', array( $this, 'welcome_screen' ), 'dashicons-fusiona-logo', '2.111111' );
 
 			//$registration  = $avada_submenu_page_creation_method( 'avada', esc_attr__( 'Registration', 'Avada' ), esc_attr__( 'Registration', 'Avada' ), 'manage_options', 'avada-registration', array( $this, 'registration_tab' ) );
-			$support       = $avada_submenu_page_creation_method( 'avada', esc_attr__( 'Support', 'Avada' ), esc_attr__( 'Support', 'Avada' ), 'manage_options', 'avada-support', array( $this, 'support_tab' ) );
+			// $support       = $avada_submenu_page_creation_method( 'avada', esc_attr__( 'Support', 'Avada' ), esc_attr__( 'Support', 'Avada' ), 'manage_options', 'avada-support', array( $this, 'support_tab' ) );
 			$faqs          = $avada_submenu_page_creation_method( 'avada', esc_attr__( 'FAQ', 'Avada' ), esc_attr__( 'FAQ', 'Avada' ), 'edit_theme_options', 'avada-faq', array( $this, 'faq_tab' ) );
 			$demos         = $avada_submenu_page_creation_method( 'avada', esc_attr__( 'Demos', 'Avada' ), esc_attr__( 'Demos', 'Avada' ), 'manage_options', 'avada-demos', array( $this, 'demos_tab' ) );
 			$plugins       = $avada_submenu_page_creation_method( 'avada', esc_attr__( 'Plugins', 'Avada' ), esc_attr__( 'Plugins', 'Avada' ), 'install_plugins', 'avada-plugins', $plugins_callback );
@@ -522,7 +522,7 @@ class Avada_Admin {
 
 			add_action( 'admin_print_scripts-' . $welcome_screen, array( $this, 'welcome_screen_scripts' ) );
 			// add_action( 'admin_print_scripts-' . $registration, array( $this, 'registration_screen_scripts' ) );
-			add_action( 'admin_print_scripts-' . $support, array( $this, 'support_screen_scripts' ) );
+			// add_action( 'admin_print_scripts-' . $support, array( $this, 'support_screen_scripts' ) );
 			add_action( 'admin_print_scripts-' . $faqs, array( $this, 'faq_screen_scripts' ) );
 			add_action( 'admin_print_scripts-' . $demos, array( $this, 'demos_screen_scripts' ) );
 			add_action( 'admin_print_scripts-' . $plugins, array( $this, 'plugins_screen_scripts' ) );
@@ -642,13 +642,13 @@ class Avada_Admin {
 			</div>
 		<?php endif; ?>
 		<div class="about-text">
-			<?php printf( __( 'Avada is now installed and ready to use! Get ready to build something beautiful. Please <a href="%1$s" target="%2$s">register your purchase</a> to get automatic theme updates, import Avada demos and install premium plugins. Check out the <a href="%3$s">Support tab</a> to learn how to receive product support. We hope you enjoy it!', 'fusion-builder' ), esc_url_raw( admin_url( 'admin.php?page=avada-registration' ) ), '_blank', esc_url_raw( admin_url( 'admin.php?page=avada-support' ) ) ); // WPCS: XSS ok. ?>
+			<?php printf( __( 'Avada is now installed and ready to use! Get ready to build something beautiful. Check out the <a href="%3$s">Support tab</a> to learn how to receive product support. We hope you enjoy it!', 'fusion-builder' ), esc_url_raw( admin_url( 'admin.php?page=avada-registration' ) ), '_blank', esc_url_raw( admin_url( 'admin.php?page=avada-support' ) ) ); // WPCS: XSS ok. ?>
 		</div>
 		<div class="avada-logo"><span class="avada-version"><?php esc_attr_e( 'Version', 'Avada' ); ?> <?php echo esc_attr( $this->theme_version ); ?></span></div>
 		<h2 class="nav-tab-wrapper">
 			<a href="<?php echo esc_url_raw( ( 'welcome' === $screen ) ? '#' : admin_url( 'admin.php?page=avada' ) ); ?>" class="<?php echo ( 'welcome' === $screen ) ? 'nav-tab-active' : ''; ?> nav-tab"><?php esc_attr_e( 'Welcome', 'Avada' ); ?></a>
 			<!--<a href="<?php echo esc_url_raw( ( 'registration' === $screen ) ? '#' : admin_url( 'admin.php?page=avada-registration' ) ); ?>" class="<?php echo ( 'registration' === $screen ) ? 'nav-tab-active' : ''; ?> nav-tab"><?php esc_attr_e( 'Registration', 'Avada' ); ?></a>-->
-			<a href="<?php echo esc_url_raw( ( 'support' === $screen ) ? '#' : admin_url( 'admin.php?page=avada-support' ) ); ?>" class="<?php echo ( 'support' === $screen ) ? 'nav-tab-active' : ''; ?> nav-tab"><?php esc_attr_e( 'Support', 'Avada' ); ?></a>
+			<!_-<a href="<?php echo esc_url_raw( ( 'support' === $screen ) ? '#' : admin_url( 'admin.php?page=avada-support' ) ); ?>" class="<?php echo ( 'support' === $screen ) ? 'nav-tab-active' : ''; ?> nav-tab"><?php esc_attr_e( 'Support', 'Avada' ); ?></a>-->
 			<a href="<?php echo esc_url_raw( ( 'faqs' === $screen ) ? '#' : admin_url( 'admin.php?page=avada-faq' ) ); ?>" class="<?php echo ( 'faqs' === $screen ) ? 'nav-tab-active' : ''; ?> nav-tab"><?php esc_attr_e( 'FAQ', 'Avada' ); ?></a>
 			<a href="<?php echo esc_url_raw( ( 'demos' === $screen ) ? '#' : admin_url( 'admin.php?page=avada-demos' ) ); ?>" class="<?php echo ( 'demos' === $screen ) ? 'nav-tab-active' : ''; ?> nav-tab"><?php esc_attr_e( 'Demos', 'Avada' ); ?></a>
 			<a href="<?php echo esc_url_raw( ( 'plugins' === $screen ) ? '#' : admin_url( 'admin.php?page=avada-plugins' ) ); ?>" class="<?php echo ( 'plugins' === $screen ) ? 'nav-tab-active' : ''; ?> nav-tab"><?php esc_attr_e( 'Plugins', 'Avada' ); ?></a>
