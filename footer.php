@@ -146,6 +146,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<a class="fusion-one-page-text-link fusion-page-load-link"></a>
 
 		<?php wp_footer(); ?>
+		
+		<script type="text/javascript">
+			(function($){
+				var jW = $(window);
+				$(window).scroll(function(){
+					if (jW.scrollTop() < 10) {
+						$('.fusion-sidebar-stuck').css({
+							position: '',
+							top: '',
+							width: ''
+						});
+						$('.fusion-sidebar-inner-content').removeClass('fusion-sidebar-stuck');
+					}
+				});
+			})(jQuery);
+		</script>
 
 		<?php
 		/**
