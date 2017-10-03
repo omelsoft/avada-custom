@@ -105,6 +105,7 @@ class Fusion_Widget_Facebook_Page extends WP_Widget {
 
 					if ( $container_width != jQuery('.<?php echo esc_attr( $args['widget_id'] ); ?> .fb-page' ).data( 'width' ) ) {
 						jQuery('.<?php echo esc_attr( $args['widget_id'] ); ?> .fb-page' ).attr( 'data-width', $container_width );
+						jQuery('.<?php echo esc_attr( $args['widget_id'] ); ?> .fb-page' ).css( 'width', $container_width );
 						FB.XFBML.parse();
 					}
 				}
@@ -189,7 +190,7 @@ class Fusion_Widget_Facebook_Page extends WP_Widget {
 		</p>
 
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'width' ) ); ?>"><?php esc_attr_e( 'Width (has to be between 180 and 500):', 'Avada' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'width' ) ); ?>"><?php esc_attr_e( 'Width (has to be between 180 and 500): Now accepts unit like px or %.', 'Avada' ); ?></label>
 			<input class="widefat" type="text" style="width: 80px;" id="<?php echo esc_attr( $this->get_field_id( 'width' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'width' ) ); ?>" value="<?php echo esc_attr( $instance['width'] ); ?>" />
 		</p>
 
